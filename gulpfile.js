@@ -53,7 +53,6 @@ gulp.task('_build', 'INTERNAL TASK - Compiles all TypeScript source files', func
   });
 
   return exec('tsc', function (err, stdout, stderr) {
-    console.log(stdout);
     if (stderr) {
       console.log(stderr);
     }
@@ -62,8 +61,12 @@ gulp.task('_build', 'INTERNAL TASK - Compiles all TypeScript source files', func
 });
 
 //run tslint task, then run update-tsconfig and gen-def in parallel, then run _build
+// gulp.task('build', 'Compiles all TypeScript source files and updates module references', function(callback) {
+//   gulpSequence('tslint', ['update-tsconfig', 'gen-def'], '_build')(callback);
+// });
+
 gulp.task('build', 'Compiles all TypeScript source files and updates module references', function(callback) {
-  gulpSequence('tslint', ['update-tsconfig', 'gen-def'], '_build')(callback);
+    gulpSequence(['update-tsconfig', 'gen-def'], '_build')(callback);
 });
 
 gulp.task('test', 'Runs the Jasmine test specs', ['build'], function () {
@@ -73,4 +76,17 @@ gulp.task('test', 'Runs the Jasmine test specs', ['build'], function () {
 
 gulp.task('watch', 'Watches ts source files and runs build on change', function () {
   gulp.watch('src/**/*.ts', ['build']);
+});
+
+gulp.task('_run', 'INTERNAL TASK - execs nodeJS', function(cb) {
+    exec('node lib/main.js', function (err, stdout, stderr) {
+        console.log('Starting NodeJS....\n ', stdout);
+        if (stderr) {
+            console.log(stderr);
+        }
+    });
+});
+
+gulp.task('run', 'Builds and runs application', function(callback) {
+    gulpSequence('build', '_run')(callback);
 });
