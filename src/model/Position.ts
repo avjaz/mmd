@@ -32,7 +32,7 @@ class Position {
     }
 
     set orientation(val: string) {
-        this.orientation = val;
+        this._orientation = val;
     }
 }
 

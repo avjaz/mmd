@@ -12,6 +12,7 @@ class GridManager {
     constructor(grid: Grid, pieces: Piece[]) {
         this._grid = grid;
         this._pieces = pieces;
+        this._historyManager = new HistoryManager();
     }
 
     update(command: Command) {

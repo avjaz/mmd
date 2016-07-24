@@ -20,7 +20,7 @@ class CommandParser {
             var commandAction: string = values[0];
 
             //Check to see if the input is a valid command, return null if not
-            if (!Commands[<any>commandAction]) {
+            if (Commands[<any>commandAction] === undefined) {
                 return null;
             }
 
@@ -35,12 +35,12 @@ class CommandParser {
                 }
 
                 //xpos must be a number
-                if (!parseInt(commandArgs[0])) {
+                if (parseInt(commandArgs[0]) === NaN) {
                     return null;
                 }
 
                 //ypos nust be a number
-                if (!parseInt(commandArgs[1])) {
+                if (parseInt(commandArgs[1]) === NaN) {
                     return null;
                 }
 
