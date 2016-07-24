@@ -1,4 +1,8 @@
 import Orientation = require("./Orientation");
+
+/**
+ * A position class
+ */
 class Position {
 
     private _xPos: number;

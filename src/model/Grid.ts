@@ -2,6 +2,10 @@ import Command = require('../commands/Command');
 import Piece = require('./Piece');
 import UndoCommand = require("../commands/UndoCommand");
 
+/**
+ * A basic Grid class of given width and height.
+ *
+ */
 class Grid {
     private _width: number;
     private _height: number;
@@ -11,6 +15,12 @@ class Grid {
         this._height = height;
     }
 
+    /**
+     * Performs the given Command on the given Piece
+     *
+     * @param piece
+     * @param command
+     */
     update(piece: Piece, command: Command) {
         command.execute(piece);
     }

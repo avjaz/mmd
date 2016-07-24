@@ -2,6 +2,9 @@ import Piece = require("../model/Piece");
 import Command = require("./Command");
 import Position = require("../model/Position");
 
+/**
+ * Command to restore a Piece to its previous Position
+ */
 class UndoCommand implements Command{
 
     private _previousPosition: Position;

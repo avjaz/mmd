@@ -2,6 +2,9 @@ import Command = require("./Command");
 import Piece = require("../model/Piece");
 import Orientation = require("../model/Orientation");
 
+/**
+ * Command to Rotate a Piece to the right.
+ */
 class RotateRightCommand implements Command{
 
     constructor() {}

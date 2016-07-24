@@ -1,6 +1,11 @@
 import Piece = require("./model/Piece");
 import Position = require("./model/Position");
 
+/**
+ * Supports undo-able commands by keeping an array of Positions for each piece.
+ *
+ * //FIXME - should really use a proper cache.
+ */
 class HistoryManager {
 
     private _pieceHistory: Map<Piece, Position[]> = new Map();

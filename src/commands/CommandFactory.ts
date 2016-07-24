@@ -10,6 +10,9 @@ import RotateRightCommand = require("./RotateRightCommand");
 import MoveCommand = require("./MoveCommand");
 import Piece = require("../model/Piece");
 
+/**
+ * A factory for our Commands, returning Commands based on commandType (parsed by stdin)
+ */
 class CommandFactory {
 
     public create(commandType: string, args?: string[]): Command {

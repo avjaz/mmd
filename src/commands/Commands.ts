@@ -1,5 +1,5 @@
 /**
- * Created by markbeavis on 23/07/16.
+ * Enum of all supported Commands
  */
 enum Commands {
     PLACE,

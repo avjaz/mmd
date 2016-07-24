@@ -1,6 +1,10 @@
 import Orientation = require("./Orientation");
 import Position = require("./Position");
 
+/**
+ * A piece on the Grid.
+ * Subclasses should override the name property below.
+ */
 abstract class Piece {
     private _position: Position;
     protected _name: string;

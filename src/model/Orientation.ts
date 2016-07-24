@@ -1,3 +1,6 @@
+/**
+ * Class for all possible Orientations on a Piece.
+ */
 class Orientation {
 
     static NORTH: string = 'NORTH';

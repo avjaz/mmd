@@ -6,6 +6,9 @@ import Commands = require("./Commands");
 import CommandFactory = require('./CommandFactory');
 import Orientation = require("../model/Orientation");
 
+/**
+ * Takes string from stdin, parses it and returns a Commmand (via the CommandFactory).
+ */
 class CommandParser {
     commandFactory: CommandFactory;
 

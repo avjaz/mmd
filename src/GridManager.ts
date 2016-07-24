@@ -4,6 +4,12 @@ import UndoCommand = require("./commands/UndoCommand");
 import Grid = require("./model/Grid");
 import HistoryManager = require("./HistoryManager");
 
+
+/**
+ * Class responsible for updating the Grid and checking the piece/s are within the
+ * bounds of the Grid.
+ *
+ */
 class GridManager {
     private _grid: Grid;
     private _pieces: Piece[];

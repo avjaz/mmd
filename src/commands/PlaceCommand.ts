@@ -2,6 +2,9 @@ import Command = require("./Command");
 import Piece = require("../model/Piece");
 import Orientation = require("../model/Orientation");
 
+/**
+ * Command that sets the position of a pieve.
+ */
 class PlaceCommand implements Command {
 
     private xPos: number;

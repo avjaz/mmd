@@ -6,6 +6,13 @@ import Piece = require('./model/Piece');
 import Robot = require('./model/Robot');
 import GridManager = require("./GridManager");
 
+/**
+ * Entry point into App, takes stdin and turns it into a command.
+ * Then dispatches it to the Grid Manager
+ *
+ * @type {CommandParser}
+ */
+
 var commandParser: CommandParser = new CommandParser();
 var pieces: Piece[] = [new Robot()];
 var gridManager: GridManager = new GridManager(new Grid(5, 5), pieces);
