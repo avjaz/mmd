@@ -8,18 +8,14 @@ import ReportCommand = require("./ReportCommand");
 import RotateLeftCommand = require("./RotateLeftCommand");
 import RotateRightCommand = require("./RotateRightCommand");
 import MoveCommand = require("./MoveCommand");
+import Piece = require("../model/Piece");
 
 class CommandFactory {
 
     public create(commandType: string, args?: string[]): Command {
         switch (commandType) {
             case Commands[Commands.PLACE]:
-                try {
-                    return new PlaceCommand(args);
-                }
-                catch(e) {
-                    return null;
-                }
+                return new PlaceCommand(args);
             case Commands[Commands.REPORT]:
                 return new ReportCommand();
             case Commands[Commands.LEFT]:

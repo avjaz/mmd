@@ -1,64 +1,36 @@
 import Orientation = require("./Orientation");
+import Position = require("./Position");
 
 abstract class Piece {
-    private _oldXPos: number;
-    private _oldYPos: number;
-    private _xPos: number;
-    private _yPos: number;
-    private _orientation: string;
+    private _position: Position;
     protected _name: string;
 
     constructor(xPos: number, yPos: number, orientation: string) {
-        this._xPos = xPos;
-        this._yPos = yPos;
-        this._orientation = orientation;
-    }
-
-    restore(): void {
-        this._xPos = this._oldXPos;
-        this._yPos = this._oldYPos;
-    }
-
-    get oldXPos(): number {
-        return this._oldXPos;
-    }
-
-    set oldXPos(val: number) {
-        this._oldXPos = val;
+        this._position = new Position(xPos, yPos, orientation);
     }
 
     get xPos(): number {
-        return this._xPos;
+        return this._position.xPos;
     }
 
     set xPos(val: number) {
-        this._oldXPos = this._xPos;
-        this._xPos = val;
-    }
-
-    get oldYPos(): number {
-        return this._oldYPos;
-    }
-
-    set oldYPos(val: number) {
-        this._oldYPos = val;
+        this._position.xPos = val;
     }
 
     get yPos(): number {
-        return this._yPos;
+        return this._position.yPos;
     }
 
     set yPos(val: number) {
-        this._oldYPos = this._yPos;
-        this._yPos = val;
+        this._position.yPos = val;
     }
 
     get orientation(): string {
-        return this._orientation;
+        return this._position.orientation;
     }
 
     set orientation(val: string) {
-        this._orientation = val;
+        this._position.orientation = val;
     }
 
     get name(): string {

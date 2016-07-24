@@ -26,6 +26,10 @@ class RotateLeftCommand implements Command{
             }
         }
     }
+
+    undo(piece:Piece):void {
+
+    }
 }
 
 export = RotateLeftCommand;

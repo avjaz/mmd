@@ -1,7 +1,8 @@
-declare enum Orientation {
-    NORTH = 0,
-    EAST = 1,
-    SOUTH = 2,
-    WEST = 3,
+declare class Orientation {
+    static NORTH: string;
+    static EAST: string;
+    static SOUTH: string;
+    static WEST: string;
+    static isValid: (val: string) => boolean;
 }
 export = Orientation;

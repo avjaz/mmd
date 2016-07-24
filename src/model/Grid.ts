@@ -1,42 +1,34 @@
-/**
- * Created by markbeavis on 23/07/16.
- */
 import Command = require('../commands/Command');
 import Piece = require('./Piece');
+import UndoCommand = require("../commands/UndoCommand");
 
 class Grid {
-    width: number;
-    height: number;
-    pieces: Piece[];
+    private _width: number;
+    private _height: number;
 
-    constructor(width: number, height: number, pieces: Piece[]) {
-        this.width = width;
-        this.height = height;
-        this.pieces = pieces;
+    constructor(width: number, height: number) {
+        this._width = width;
+        this._height = height;
     }
 
-    update(command: Command) {
-        for (var piece of this.pieces) {
-            command.execute(piece);
-            if (this.isPiecePlacedOnGrid(piece) && !this.isPieceWithinBounds(piece)) {
-                piece.restore();
-                console.log('Instruction would take robot out of bounds. Ignoring...');
-            }
-        }
+    update(piece: Piece, command: Command) {
+        command.execute(piece);
     }
 
-    private isPieceWithinBounds(piece: Piece): boolean {
-        return piece.xPos >= 0 &&
-            piece.xPos < this.width &&
-            piece.yPos >= 0 &&
-            piece.yPos < this.height;
+    get width(): number {
+        return this._width;
     }
 
-    private isPiecePlacedOnGrid(piece: Piece): boolean {
-        return piece.xPos !== undefined &&
-            piece.yPos !== undefined &&
-            piece.orientation !== undefined;
+    set width(val: number) {
+        this._width = val;
+    }
 
+    get height(): number {
+        return this._height;
+    }
+
+    set height(val: number) {
+        this._height = val;
     }
 }
 

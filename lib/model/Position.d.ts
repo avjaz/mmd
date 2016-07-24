@@ -1,10 +1,10 @@
-declare abstract class Piece {
-    private _position;
-    protected _name: string;
+declare class Position {
+    private _xPos;
+    private _yPos;
+    private _orientation;
     constructor(xPos: number, yPos: number, orientation: string);
     xPos: number;
     yPos: number;
     orientation: string;
-    name: string;
 }
-export = Piece;
+export = Position;

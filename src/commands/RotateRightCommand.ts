@@ -2,7 +2,7 @@ import Command = require("./Command");
 import Piece = require("../model/Piece");
 import Orientation = require("../model/Orientation");
 
-class RotateRighttCommand implements Command{
+class RotateRightCommand implements Command{
 
     constructor() {}
 
@@ -26,6 +26,10 @@ class RotateRighttCommand implements Command{
             }
         }
     }
+
+    undo(piece:Piece):void {
+
+    }
 }
 
-export = RotateRighttCommand;
+export = RotateRightCommand;

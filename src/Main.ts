@@ -4,10 +4,11 @@ import CommandParser = require('./commands/CommandParser');
 import Grid = require('./model/Grid');
 import Piece = require('./model/Piece');
 import Robot = require('./model/Robot');
+import GridManager = require("./GridManager");
 
 var commandParser: CommandParser = new CommandParser();
 var pieces: Piece[] = [new Robot()];
-var grid: Grid = new Grid(5, 5, pieces);
+var gridManager: GridManager = new GridManager(new Grid(5, 5), pieces);
 
 const readline = require('readline');
 
@@ -27,6 +28,6 @@ rl.on('line', (input: string) => {
         console.log(`Instruction: ${input} did not make sense. Ignoring...`);
     }
     else {
-        grid.update(command);
+        gridManager.update(command);
     }
 });

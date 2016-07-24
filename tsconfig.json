@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "target": "ES5",
+    "target": "ES6",
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -14,11 +14,9 @@
     "src/**/*.ts"
   ],
   "files": [
+    "src/GridManager.ts",
+    "src/HistoryManager.ts",
     "src/Main.ts",
-    "src/model/Grid.ts",
-    "src/model/Orientation.ts",
-    "src/model/Piece.ts",
-    "src/model/Robot.ts",
     "src/commands/Command.ts",
     "src/commands/CommandFactory.ts",
     "src/commands/CommandParser.ts",
@@ -27,6 +25,12 @@
     "src/commands/PlaceCommand.ts",
     "src/commands/ReportCommand.ts",
     "src/commands/RotateLeftCommand.ts",
-    "src/commands/RotateRightCommand.ts"
+    "src/commands/RotateRightCommand.ts",
+    "src/commands/UndoCommand.ts",
+    "src/model/Grid.ts",
+    "src/model/Orientation.ts",
+    "src/model/Piece.ts",
+    "src/model/Position.ts",
+    "src/model/Robot.ts"
   ]
 }

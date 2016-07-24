@@ -2,7 +2,7 @@ import Command = require("./Command");
 import Piece = require("../model/Piece");
 import Orientation = require("../model/Orientation");
 
-class MoveCommand implements Command{
+class MoveCommand implements Command {
 
     constructor() {}
 
@@ -26,6 +26,12 @@ class MoveCommand implements Command{
             }
         }
     }
+
+    undo(piece:Piece):void {
+
+    }
+
+
 }
 
 export = MoveCommand;
